@@ -1,0 +1,26 @@
+{
+"workbench.colorTheme": "Monokai Pro",
+"workbench.preferredDarkColorTheme": "Monokai Pro Light",
+
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"files.eol": "\n",
+"files.trimTrailingWhitespace": true,
+"files.insertFinalNewline": true,
+"search.exclude": {
+"/node_modules": true,
+"/playwright-report": true,
+"/test-results": true,
+"/.playwright-cache": true
+},
+"files.exclude": {
+"/node_modules": true,
+"/playwright-report": true,
+"/test-results": true,
+"/.playwright-cache": true
+},
+"typescript.tsdk": "node_modules/typescript/lib",
+"prettier.printWidth": 100,
+"prettier.singleQuote": true,
+"prettier.trailingComma": "all"
+}
