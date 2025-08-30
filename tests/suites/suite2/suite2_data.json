@@ -1,0 +1,19 @@
+[
+  {
+    "caseName": "Suite2_Case1",
+    "steps": [
+      { "stepName": "step1", "param1": "case1_step1_param1", "param2": "case1_step1_param2", "param3": "case1_step1_param3" },
+      { "stepName": "step2", "param1": "case1_step2_param1", "param2": "case1_step2_param2", "param3": "case1_step2_param3" },
+      { "stepName": "step3", "param1": "case1_step3_param1", "param2": "case1_step3_param2", "param3": "case1_step3_param3" }
+    ]
+  },
+  {
+    "caseName": "Suite2_Case2",
+    "steps": [
+      { "stepName": "step1", "param1": "case2_step1_param1", "param2": "case2_step1_param2" },
+      { "stepName": "step2", "param1": "case2_step2_param1", "param2": "case2_step2_param2" },
+      { "stepName": "step3", "param1": "case2_step3_param1", "param2": "case2_step3_param2" },
+      { "stepName": "step4", "param1": "case2_step4_param1", "param2": "case2_step4_param2" }
+    ]
+  }
+]
