@@ -6,6 +6,5 @@ e2e-old/playwright-report/
 playwright-report/
 .playwright-cache/
 .playwright/
-.vscode/
 coverage/
 *.log
