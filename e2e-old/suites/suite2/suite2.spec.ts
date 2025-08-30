@@ -6,6 +6,8 @@ import { test, expect } from '../../fixtures/test-fixtures';
 import { runSteps } from '../../steps/step-runner';
 import type { Step, StepContext } from '../../steps/step-types';
 
+
+
 // 1) 真實步驟實現庫：按名稱註冊，在這裡只關注業務邏輯
 const stepLibrary: Record<string, (ctx: StepContext, payload: any) => Promise<void> | void> = {
   async step1(ctx, p) {
@@ -31,8 +33,9 @@ const stepLibrary: Record<string, (ctx: StepContext, payload: any) => Promise<vo
 };
 
 // 2) 測試層：將數據檔案中的 { caseName, steps[] } 轉為 Step[]，交給 runner 執行
+import path from 'path';
 test.use({
-  dataFile: 'tests/suites/suite2/suite2_data.json'
+dataFile: path.resolve(__dirname, './suite2_data.json'),
 });
 
 test.describe('Suite2', () => {

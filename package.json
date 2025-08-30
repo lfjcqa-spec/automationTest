@@ -5,9 +5,10 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:suite1": "playwright test tests/suites/suite1.spec.ts",
-    "test:suite2": "playwright test tests/suites/suite2.spec.ts",
-    "test:google": "playwright test tests/suites/google.spec.ts --headed",
+    "test:old": "playwright test --config=playwright.old.config.js",
+    "test:new": "playwright test --config=playwright.new.config.ts",
+    "report:old": "playwright show-report --config=playwright.old.config.js --port=9340",
+    "report:new": "playwright show-report --config=playwright.new.config.ts --port=9340",
     "lint": "echo \"add eslint if needed\""
   },
   "devDependencies": {

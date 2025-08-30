@@ -1,0 +1,256 @@
+2025-08-30T13:31:21.346Z [SUITE:BEGIN] totalTests=2
+2025-08-30T13:31:22.179Z [TEST:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API）
+2025-08-30T13:31:22.182Z [TEST:BEGIN] Suite2 數據驅動用例（按 case.steps 調度）
+2025-08-30T13:31:22.182Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Before Hooks
+2025-08-30T13:31:22.183Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: beforeAll hook
+2025-08-30T13:31:22.183Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Before Hooks
+2025-08-30T13:31:22.189Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "browser"
+2025-08-30T13:31:22.193Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Launch browser
+2025-08-30T13:31:22.205Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: beforeAll hook status=ok
+2025-08-30T13:31:22.213Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "browser"
+2025-08-30T13:31:22.216Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Launch browser
+2025-08-30T13:31:22.257Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Launch browser status=ok
+2025-08-30T13:31:22.257Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "browser" status=ok
+2025-08-30T13:31:22.260Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "context"
+2025-08-30T13:31:22.262Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Create context
+2025-08-30T13:31:22.271Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Create context status=ok
+2025-08-30T13:31:22.272Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "context" status=ok
+2025-08-30T13:31:22.273Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "page"
+2025-08-30T13:31:22.275Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Create page
+2025-08-30T13:31:22.283Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Launch browser status=ok
+2025-08-30T13:31:22.284Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "browser" status=ok
+2025-08-30T13:31:22.286Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "context"
+2025-08-30T13:31:22.289Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Create context
+2025-08-30T13:31:22.302Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Create context status=ok
+2025-08-30T13:31:22.304Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "context" status=ok
+2025-08-30T13:31:22.304Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "page"
+2025-08-30T13:31:22.307Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Create page
+2025-08-30T13:31:22.333Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Create page status=ok
+2025-08-30T13:31:22.334Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "page" status=ok
+2025-08-30T13:31:22.334Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "vars"
+2025-08-30T13:31:22.335Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "vars" status=ok
+2025-08-30T13:31:22.336Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataRows"
+2025-08-30T13:31:22.337Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataRows" status=ok
+2025-08-30T13:31:22.338Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Before Hooks status=ok
+2025-08-30T13:31:22.347Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step1 [loop=1, #1]
+2025-08-30T13:31:22.347Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step1 [loop=1, #1].txt"
+2025-08-30T13:31:22.349Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step1 [loop=1, #1].txt" status=ok
+2025-08-30T13:31:22.351Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=1, #1].txt"
+2025-08-30T13:31:22.353Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=1, #1].txt"
+2025-08-30T13:31:22.354Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step1 [loop=1, #1]-500-step1.txt"
+2025-08-30T13:31:22.354Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=1, #1].txt" status=ok
+2025-08-30T13:31:22.355Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=1, #1].txt" status=ok
+2025-08-30T13:31:22.355Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step1 [loop=1, #1]-500-step1.txt" status=ok
+2025-08-30T13:31:22.357Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.357Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.358Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step1 [loop=1, #1].txt"
+2025-08-30T13:31:22.359Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step1 [loop=1, #1].txt" status=ok
+2025-08-30T13:31:22.362Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step1 [loop=1, #1] status=ok
+2025-08-30T13:31:22.366Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step2 [loop=1, #2]
+2025-08-30T13:31:22.367Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Create page status=ok
+2025-08-30T13:31:22.367Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "page" status=ok
+2025-08-30T13:31:22.367Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "vars"
+2025-08-30T13:31:22.368Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "vars" status=ok
+2025-08-30T13:31:22.368Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataRows"
+2025-08-30T13:31:22.368Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataRows" status=ok
+2025-08-30T13:31:22.368Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Before Hooks status=ok
+2025-08-30T13:31:22.372Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step1
+2025-08-30T13:31:22.373Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step2 [loop=1, #2].txt"
+2025-08-30T13:31:22.373Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step2 [loop=1, #2].txt" status=ok
+2025-08-30T13:31:22.374Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=1, #2].txt"
+2025-08-30T13:31:22.374Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=1, #2].txt"
+2025-08-30T13:31:22.375Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step2 [loop=1, #2]-500-step2.txt"
+2025-08-30T13:31:22.375Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=1, #2].txt" status=ok
+2025-08-30T13:31:22.375Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=1, #2].txt" status=ok
+2025-08-30T13:31:22.375Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step2 [loop=1, #2]-500-step2.txt" status=ok
+2025-08-30T13:31:22.376Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.376Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.376Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step2 [loop=1, #2].txt"
+2025-08-30T13:31:22.377Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step2 [loop=1, #2].txt" status=ok
+2025-08-30T13:31:22.380Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step2 [loop=1, #2] status=ok
+2025-08-30T13:31:22.384Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step3 [loop=1, #3]
+2025-08-30T13:31:22.384Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step3 [loop=1, #3].txt"
+2025-08-30T13:31:22.385Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step3 [loop=1, #3].txt" status=ok
+2025-08-30T13:31:22.385Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=1, #3].txt"
+2025-08-30T13:31:22.386Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=1, #3].txt"
+2025-08-30T13:31:22.387Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step1.txt"
+2025-08-30T13:31:22.387Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step1.txt" status=ok
+2025-08-30T13:31:22.388Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt"
+2025-08-30T13:31:22.388Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt"
+2025-08-30T13:31:22.388Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step1-500-step1.txt"
+2025-08-30T13:31:22.388Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt" status=ok
+2025-08-30T13:31:22.389Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt" status=ok
+2025-08-30T13:31:22.389Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step1-500-step1.txt" status=ok
+2025-08-30T13:31:22.389Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.389Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.390Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step1.txt"
+2025-08-30T13:31:22.390Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step1.txt" status=ok
+2025-08-30T13:31:22.394Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step1 status=ok
+2025-08-30T13:31:22.397Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step2
+2025-08-30T13:31:22.398Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step2.txt"
+2025-08-30T13:31:22.398Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step2.txt" status=ok
+2025-08-30T13:31:22.399Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt"
+2025-08-30T13:31:22.399Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt"
+2025-08-30T13:31:22.399Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step2-500-step2.txt"
+2025-08-30T13:31:22.400Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step3 [loop=1, #3]-500-step3.txt"
+2025-08-30T13:31:22.400Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=1, #3].txt" status=ok
+2025-08-30T13:31:22.400Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=1, #3].txt" status=ok
+2025-08-30T13:31:22.401Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step3 [loop=1, #3]-500-step3.txt" status=ok
+2025-08-30T13:31:22.401Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.401Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.402Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step3 [loop=1, #3].txt"
+2025-08-30T13:31:22.402Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step3 [loop=1, #3].txt" status=ok
+2025-08-30T13:31:22.405Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step3 [loop=1, #3] status=ok
+2025-08-30T13:31:22.408Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step1 [loop=2, #1]
+2025-08-30T13:31:22.409Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step1 [loop=2, #1].txt"
+2025-08-30T13:31:22.409Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step1 [loop=2, #1].txt" status=ok
+2025-08-30T13:31:22.409Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=2, #1].txt"
+2025-08-30T13:31:22.410Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=2, #1].txt"
+2025-08-30T13:31:22.410Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step1 [loop=2, #1]-500-step1.txt"
+2025-08-30T13:31:22.410Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=2, #1].txt" status=ok
+2025-08-30T13:31:22.411Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step1 [loop=2, #1].txt" status=ok
+2025-08-30T13:31:22.411Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step1 [loop=2, #1]-500-step1.txt" status=ok
+2025-08-30T13:31:22.411Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.411Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.412Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step1 [loop=2, #1].txt"
+2025-08-30T13:31:22.412Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step1 [loop=2, #1].txt" status=ok
+2025-08-30T13:31:22.416Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step1 [loop=2, #1] status=ok
+2025-08-30T13:31:22.420Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step2 [loop=2, #2]
+2025-08-30T13:31:22.421Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step2 [loop=2, #2].txt"
+2025-08-30T13:31:22.421Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step2 [loop=2, #2].txt" status=ok
+2025-08-30T13:31:22.421Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=2, #2].txt"
+2025-08-30T13:31:22.422Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=2, #2].txt"
+2025-08-30T13:31:22.422Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step2 [loop=2, #2]-500-step2.txt"
+2025-08-30T13:31:22.422Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=2, #2].txt" status=ok
+2025-08-30T13:31:22.423Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step2 [loop=2, #2].txt" status=ok
+2025-08-30T13:31:22.423Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step2 [loop=2, #2]-500-step2.txt" status=ok
+2025-08-30T13:31:22.423Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.423Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.424Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt" status=ok
+2025-08-30T13:31:22.424Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt" status=ok
+2025-08-30T13:31:22.425Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step2-500-step2.txt" status=ok
+2025-08-30T13:31:22.425Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.425Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.426Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step2.txt"
+2025-08-30T13:31:22.426Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step2.txt" status=ok
+2025-08-30T13:31:22.429Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step2 status=ok
+2025-08-30T13:31:22.433Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step3
+2025-08-30T13:31:22.434Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step3.txt"
+2025-08-30T13:31:22.434Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step3.txt" status=ok
+2025-08-30T13:31:22.434Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt"
+2025-08-30T13:31:22.434Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt"
+2025-08-30T13:31:22.435Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step3-500-step3.txt"
+2025-08-30T13:31:22.435Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt" status=ok
+2025-08-30T13:31:22.435Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt" status=ok
+2025-08-30T13:31:22.435Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step3-500-step3.txt" status=ok
+2025-08-30T13:31:22.435Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.436Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.436Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step3.txt"
+2025-08-30T13:31:22.436Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step3.txt" status=ok
+2025-08-30T13:31:22.440Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step3 status=ok
+2025-08-30T13:31:22.443Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step1
+2025-08-30T13:31:22.443Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step1.txt"
+2025-08-30T13:31:22.444Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step1.txt" status=ok
+2025-08-30T13:31:22.444Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt"
+2025-08-30T13:31:22.444Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt"
+2025-08-30T13:31:22.445Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step1-500-step1.txt"
+2025-08-30T13:31:22.445Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt" status=ok
+2025-08-30T13:31:22.445Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step1.txt" status=ok
+2025-08-30T13:31:22.445Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step1-500-step1.txt" status=ok
+2025-08-30T13:31:22.445Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.446Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.446Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step1.txt"
+2025-08-30T13:31:22.446Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step1.txt" status=ok
+2025-08-30T13:31:22.452Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step1 status=ok
+2025-08-30T13:31:22.455Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step2
+2025-08-30T13:31:22.456Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step2.txt"
+2025-08-30T13:31:22.456Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step2.txt" status=ok
+2025-08-30T13:31:22.456Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt"
+2025-08-30T13:31:22.457Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt"
+2025-08-30T13:31:22.457Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step2-500-step2.txt"
+2025-08-30T13:31:22.457Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt" status=ok
+2025-08-30T13:31:22.457Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step2.txt" status=ok
+2025-08-30T13:31:22.457Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step2-500-step2.txt" status=ok
+2025-08-30T13:31:22.458Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.458Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.458Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step2.txt"
+2025-08-30T13:31:22.458Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step2.txt" status=ok
+2025-08-30T13:31:22.461Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step2 status=ok
+2025-08-30T13:31:22.465Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step3
+2025-08-30T13:31:22.466Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step3.txt"
+2025-08-30T13:31:22.466Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step3.txt" status=ok
+2025-08-30T13:31:22.466Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt"
+2025-08-30T13:31:22.467Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt"
+2025-08-30T13:31:22.467Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step3-500-step3.txt"
+2025-08-30T13:31:22.467Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt" status=ok
+2025-08-30T13:31:22.467Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step3.txt" status=ok
+2025-08-30T13:31:22.468Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step3-500-step3.txt" status=ok
+2025-08-30T13:31:22.468Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.468Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.468Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step3.txt"
+2025-08-30T13:31:22.469Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step3.txt" status=ok
+2025-08-30T13:31:22.471Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step3 status=ok
+2025-08-30T13:31:22.474Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: step4
+2025-08-30T13:31:22.474Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step4.txt"
+2025-08-30T13:31:22.474Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "100-pre-step4.txt" status=ok
+2025-08-30T13:31:22.475Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step4.txt"
+2025-08-30T13:31:22.475Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step4.txt"
+2025-08-30T13:31:22.475Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step4-500-step4.txt"
+2025-08-30T13:31:22.476Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step4.txt" status=ok
+2025-08-30T13:31:22.476Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "200-log-step4.txt" status=ok
+2025-08-30T13:31:22.476Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "step4-500-step4.txt" status=ok
+2025-08-30T13:31:22.483Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step2 [loop=2, #2].txt"
+2025-08-30T13:31:22.483Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step2 [loop=2, #2].txt" status=ok
+2025-08-30T13:31:22.486Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step2 [loop=2, #2] status=ok
+2025-08-30T13:31:22.488Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step3 [loop=2, #3]
+2025-08-30T13:31:22.489Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step3 [loop=2, #3].txt"
+2025-08-30T13:31:22.489Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "100-pre-step3 [loop=2, #3].txt" status=ok
+2025-08-30T13:31:22.490Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=2, #3].txt"
+2025-08-30T13:31:22.490Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=2, #3].txt"
+2025-08-30T13:31:22.491Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step3 [loop=2, #3]-500-step3.txt"
+2025-08-30T13:31:22.491Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=2, #3].txt" status=ok
+2025-08-30T13:31:22.491Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "200-log-step3 [loop=2, #3].txt" status=ok
+2025-08-30T13:31:22.491Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "step3 [loop=2, #3]-500-step3.txt" status=ok
+2025-08-30T13:31:22.492Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe"
+2025-08-30T13:31:22.492Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.492Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step3 [loop=2, #3].txt"
+2025-08-30T13:31:22.492Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Attach "900-after-step3 [loop=2, #3].txt" status=ok
+2025-08-30T13:31:22.495Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: step3 [loop=2, #3] status=ok
+2025-08-30T13:31:22.495Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: After Hooks
+2025-08-30T13:31:22.496Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataRows"
+2025-08-30T13:31:22.496Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataRows" status=ok
+2025-08-30T13:31:22.496Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataFile"
+2025-08-30T13:31:22.496Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "dataFile" status=ok
+2025-08-30T13:31:22.496Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "vars"
+2025-08-30T13:31:22.497Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "vars" status=ok
+2025-08-30T13:31:22.497Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "page"
+2025-08-30T13:31:22.497Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "page" status=ok
+2025-08-30T13:31:22.498Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "context"
+2025-08-30T13:31:22.498Z [STEP:BEGIN] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Close context
+2025-08-30T13:31:22.498Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe"
+2025-08-30T13:31:22.499Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Expect "toBe" status=ok
+2025-08-30T13:31:22.499Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step4.txt"
+2025-08-30T13:31:22.499Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Attach "900-after-step4.txt" status=ok
+2025-08-30T13:31:22.502Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: step4 status=ok
+2025-08-30T13:31:22.502Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: After Hooks
+2025-08-30T13:31:22.503Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataRows"
+2025-08-30T13:31:22.503Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataRows" status=ok
+2025-08-30T13:31:22.503Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataFile"
+2025-08-30T13:31:22.503Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "dataFile" status=ok
+2025-08-30T13:31:22.503Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "vars"
+2025-08-30T13:31:22.504Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "vars" status=ok
+2025-08-30T13:31:22.504Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "page"
+2025-08-30T13:31:22.504Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "page" status=ok
+2025-08-30T13:31:22.505Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "context"
+2025-08-30T13:31:22.505Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: Close context
+2025-08-30T13:31:22.505Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Close context status=ok
+2025-08-30T13:31:22.505Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: Fixture "context" status=ok
+2025-08-30T13:31:22.505Z [STEP:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） :: After Hooks status=ok
+2025-08-30T13:31:22.508Z [TEST:END] Suite1 循環用例執行（按 loops 驅動，擴展 API） status=passed
+2025-08-30T13:31:22.509Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Close context status=ok
+2025-08-30T13:31:22.510Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: Fixture "context" status=ok
+2025-08-30T13:31:22.515Z [STEP:BEGIN] Suite2 數據驅動用例（按 case.steps 調度） :: afterAll hook
+2025-08-30T13:31:22.532Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: afterAll hook status=ok
+2025-08-30T13:31:22.532Z [STEP:END] Suite2 數據驅動用例（按 case.steps 調度） :: After Hooks status=ok
+2025-08-30T13:31:22.535Z [TEST:END] Suite2 數據驅動用例（按 case.steps 調度） status=passed
+2025-08-30T13:31:22.815Z [SUITE:END] status=passed

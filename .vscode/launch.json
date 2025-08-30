@@ -1,23 +1,45 @@
 {
-"version": "0.2.0",
-"configurations": [
-{
-"name": "Run Playwright Tests",
-"type": "node",
-"request": "launch",
-"runtimeExecutable": "npx",
-"runtimeArgs": ["playwright", "test"],
-"cwd": "${workspaceFolder}",
-"console": "integratedTerminal"
-},
-{
-"name": "Debug Playwright Tests",
-"type": "node",
-"request": "launch",
-"runtimeExecutable": "npx",
-"runtimeArgs": ["playwright", "test", "--debug"],
-"cwd": "${workspaceFolder}",
-"console": "integratedTerminal"
-}
-]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "e2e-old: Run",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=playwright.old.config.js"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "e2e-old: Debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=playwright.old.config.js", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "e2e-new: Run",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=playwright.new.config.ts"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "e2e-new: Debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=playwright.new.config.ts", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
 }

@@ -1,13 +1,14 @@
-// tests/suites/suite1/suite1.spec.ts
+// e2e-old/suites/suite1/suite1.spec.ts
 import { test, expect } from '../../fixtures/test-fixtures';
 import { runStepsEx } from '../../steps/step-runner';
 import type { Step, StepContext } from '../../steps/step-types';
 
+import path from 'path';
 test.use({
-  dataFile: 'tests/suites/suite1/suite1_data.json',
+dataFile: path.resolve(__dirname, './suite1_data.json'),
 });
 
-// 1) 業務步驟庫
+// 业务步骤库
 const stepLibrary: Record<string, (ctx: StepContext, payload: any) => Promise<void> | void> = {
   async step1(ctx, p) {
     ctx.step?.log('[impl] step1');
@@ -28,7 +29,12 @@ const stepLibrary: Record<string, (ctx: StepContext, payload: any) => Promise<vo
 
 test.describe('Suite1', () => {
   test('Suite1 循環用例執行（按 loops 驅動，擴展 API）', async ({ page, vars, dataRows }, testInfo) => {
-    if (!dataRows.length) test.fail(true, '數據文件為空');
+    // 空数据守卫
+    if (!Array.isArray(dataRows) || dataRows.length === 0) {
+      test.fail(true, '數據文件為空或未找到');
+      test.skip();
+      return;
+    }
 
     const caseRow = dataRows[0];
     const caseName = caseRow.caseName || 'UnnamedCase';
@@ -38,7 +44,7 @@ test.describe('Suite1', () => {
       const loopIndex = loop.loopIndex;
       const stepsFromData: any[] = Array.isArray(loop.steps) ? loop.steps : [];
 
-      // 映射為標準 Step[]
+      // 映射为标准 Step[]
       const steps: Step[] = stepsFromData.map((row, idx) => {
         const name = row.stepName || `step-${idx + 1}`;
         return {
@@ -54,7 +60,7 @@ test.describe('Suite1', () => {
         };
       });
 
-      // 使用擴展版 API：可傳 hooks、meta、stepTitle、自訂 logger 等
+      // 执行步骤（扩展 API）
       await runStepsEx({
         test,
         steps,
@@ -62,19 +68,13 @@ test.describe('Suite1', () => {
         meta: { suite: 'TestSuite1', testCase: `${caseName}_loop${loopIndex}` },
         stepTitle: (s, i) => `${s.name} [loop=${loopIndex}, #${i + 1}]`,
         hooks: {
-          beforeEachStep: async ({ index, step }) => {
-            // 例如：在每步之前做資料校驗或快照
-            // console.log(`[HOOK before] ${index} -> ${step.name}`);
-          },
-          afterEachStep: async ({ index, step, error }) => {
-            // 例如：收集額外度量或錯誤上報
-            // console.log(`[HOOK after] ${index} -> ${step.name} error=${!!error}`);
-          }
+          beforeEachStep: async () => {},
+          afterEachStep: async () => {}
         },
         attachments: {
-          pre: true,   // 保留 PRE 附件
-          logs: true,  // 保留 log 附件
-          after: true  // 保留 AFTER 附件
+          pre: true,
+          logs: true,
+          after: true
         },
         logger: {
           info: (msg, m) => console.log(msg, m || ''),
