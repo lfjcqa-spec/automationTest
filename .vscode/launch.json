@@ -2,12 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "e2e-old: Run",
+      "name": "e2e-test: Run",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["playwright", "test", "--config=playwright.old.config.js"],
+      "runtimeArgs": ["playwright", "test", "--config=e2e-test/playwright.config.ts"],
       "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/e2e-test/conf/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "e2e-test: Debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=e2e-test/playwright.config.ts", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/e2e-test/conf/.env",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },

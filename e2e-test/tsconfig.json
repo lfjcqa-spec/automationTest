@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "outDir": "dist", // 中文：编译输出到 dist 目录
+    "rootDir": ".", // 中文：将 rootDir 改为当前目录（e2e-test），包含 src 和 playwright.config.ts
+    "types": ["node", "@playwright/test"]
+  },
+  "include": ["src/**/*.ts", "playwright.config.ts"], // 中文：包含 src 下的所有 .ts 文件和 playwright.config.ts
+  "exclude": ["node_modules"]
+}
