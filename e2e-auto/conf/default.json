@@ -1,9 +1,13 @@
 {
   "appUrl": "https://www.google.com",
-  "login": { "username": "demo", "password": "demoPwd" },
-  "browser": { "headless": true, "slowMo": 0, "baseURL": "" },
-  "suiteFilter": null,
-  "caseFilter": null,
-  "reportDir": "playwright-report",
-  "suiteData": [{ "name": "Smoke", "envTag": "qa" }]
+  "login": {
+    "user": "demo",
+    "password": "demo123"
+  },
+  "db": {
+    "sqlserverUrlEnv": "SQLSERVER_URL"
+  },
+  "report": {
+    "showLoopsInTitle": true
+  }
 }
