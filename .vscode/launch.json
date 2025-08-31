@@ -40,6 +40,31 @@
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
+    },
+
+    // ===== e2e-auto 新增：Run =====
+    {
+      "name": "e2e-auto: Run",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=e2e-auto/playwright.config.ts"],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/e2e-auto/conf/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    // ===== e2e-auto 新增：Debug =====
+    {
+      "name": "e2e-auto: Debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--config=e2e-auto/playwright.config.ts", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/e2e-auto/conf/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
