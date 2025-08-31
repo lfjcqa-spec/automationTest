@@ -1,5 +1,4 @@
-// 中文：数据访问层（Repositories） —— 逐表查询（作为存储过程的回退方案）
-// 注意：主流程优先使用 dbo.sp_GetCasesDesignJson（见 sp.ts 与 dbAccessFacade.ts）
+// 中文：数据访问层（纯 SQL 查询，不使用存储过程）
 import { query } from './sql.js';
 import {
   DbSuite,
@@ -11,83 +10,84 @@ import {
   DbKWValue,
 } from '../core/types.js';
 
-// 按名称过滤 Suite；不传则返回全部
-export async function getSuites(suiteFilter: string | null | undefined): Promise<DbSuite[]> {
+export async function getSuites(suiteFilter?: string | null): Promise<DbSuite[]> {
   if (suiteFilter) {
-    return await query<DbSuite>`
-      SELECT Id, Name
-      FROM dbo.Suites
-      WHERE Name = ${suiteFilter}
+    const res = await query<DbSuite>`
+      SELECT Id, Name FROM dbo.Suites WHERE Name = N'${suiteFilter}'
     `;
+    return res.recordset;
   }
-  return await query<DbSuite>`SELECT Id, Name FROM dbo.Suites`;
+  const res = await query<DbSuite>`SELECT Id, Name FROM dbo.Suites`;
+  return res.recordset;
 }
 
-// 获取某个 Suite 下的 TestCases，并返回其类别名
 export async function getCasesBySuite(
   suiteId: number,
-  caseFilter: string | null | undefined,
+  caseFilter?: string | null,
 ): Promise<(DbCase & { CategoryName: string })[]> {
   if (caseFilter) {
-    return await query<DbCase & { CategoryName: string }>`
+    const res = await query<DbCase & { CategoryName: string }>`
       SELECT c.Id, c.Name, c.CategoryId, c.SuiteId, cat.Name AS CategoryName
       FROM dbo.TestCases c
       JOIN dbo.TestCategories cat ON cat.Id = c.CategoryId
-      WHERE c.SuiteId = ${suiteId} AND c.Name = ${caseFilter}
+      WHERE c.SuiteId = ${suiteId} AND c.Name = N'${caseFilter}' AND c.IsActive = 1
     `;
+    return res.recordset;
   }
-  return await query<DbCase & { CategoryName: string }>`
+  const res = await query<DbCase & { CategoryName: string }>`
     SELECT c.Id, c.Name, c.CategoryId, c.SuiteId, cat.Name AS CategoryName
     FROM dbo.TestCases c
     JOIN dbo.TestCategories cat ON cat.Id = c.CategoryId
-    WHERE c.SuiteId = ${suiteId}
+    WHERE c.SuiteId = ${suiteId} AND c.IsActive = 1
+    ORDER BY c.Id
   `;
+  return res.recordset;
 }
 
-// 获取指定 Case 的步骤（按 Ordinal 排序）
 export async function getStepsByCase(caseId: number): Promise<DbStep[]> {
-  return await query<DbStep>`
+  const res = await query<DbStep>`
     SELECT Id, CaseId, Ordinal, StepName
     FROM dbo.TestSteps
     WHERE CaseId = ${caseId}
     ORDER BY Ordinal ASC
   `;
+  return res.recordset;
 }
 
-// 获取步骤的参数键定义（StepParamDefs）
 export async function getParamDefsByStep(stepId: number): Promise<DbParamDef[]> {
-  return await query<DbParamDef>`
+  const res = await query<DbParamDef>`
     SELECT Id, StepId, ParamKey, ParamOrder
     FROM dbo.StepParamDefs
     WHERE StepId = ${stepId}
     ORDER BY ParamOrder, ParamKey
   `;
+  return res.recordset;
 }
 
-// 获取 Case 的所有 DataSet（DataDriven 循环）
 export async function getDataSetsByCase(caseId: number): Promise<DbDataSet[]> {
-  return await query<DbDataSet>`
+  const res = await query<DbDataSet>`
     SELECT Id, CaseId, Name, Ordinal
     FROM dbo.DataSets
     WHERE CaseId = ${caseId}
     ORDER BY Ordinal ASC
   `;
+  return res.recordset;
 }
 
-// DataDriven：获取某个 DataSet 的键值
 export async function getDDValuesByDataSet(dataSetId: number): Promise<DbDDValue[]> {
-  return await query<DbDDValue>`
+  const res = await query<DbDDValue>`
     SELECT Id, DataSetId, ParamKey, ParamValue, ValueType
     FROM dbo.DataDrivenValues
     WHERE DataSetId = ${dataSetId}
   `;
+  return res.recordset;
 }
 
-// KeywordDriven：获取某 Case+Step 下所有 KV（包含 DataSetId 为 NULL 与具体值）
 export async function getKWValuesByStep(caseId: number, stepId: number): Promise<DbKWValue[]> {
-  return await query<DbKWValue>`
+  const res = await query<DbKWValue>`
     SELECT Id, CaseId, StepId, DataSetId, ParamKey, ParamValue, ValueType
     FROM dbo.KeywordStepValues
     WHERE CaseId = ${caseId} AND StepId = ${stepId}
   `;
+  return res.recordset;
 }

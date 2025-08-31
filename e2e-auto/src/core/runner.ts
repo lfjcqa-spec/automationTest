@@ -1,65 +1,93 @@
-// e2e-auto/core/runner.ts
-// 功能：统一按“实际执行模式”命名与分派；为同名 Case1 增加 A/B 别名；DataDriven 判定以 rows 长度为准。
-
 import { test } from '@playwright/test';
-import { loadSuiteModels } from '../src/loaders/suiteLoader'; // 你的套件加载函数（示例）
-import { loadCaseRows } from '../src/loaders/dataLoader'; // 你的 DataDriven 数据加载函数（示例）
-import { runCaseKeywordDriven } from '../src/executors/keyword'; // 关键字驱动执行入口（示例）
-import { runCaseDataDriven } from '../src/executors/datadriven'; // 数据驱动执行入口（示例）
+import { loadConfig } from '../config/env.js';
+import { TestContext } from './context.js';
+import { fixtures } from './fixtures.js';
+import { CaseCategory, RunUnit } from './types.js';
+import { readModelFromDb, resolveParamsForUnit } from '../dbAccessFacade.js';
 
-// 工具：为同名的用例设置别名 (A)/(B)
-function assignAliasesForDuplicates(cases: Array<{ id?: string; name: string; alias?: string }>) {
-  const map = new Map<string, number>();
-  for (const c of cases) {
-    const count = (map.get(c.name) ?? 0) + 1;
-    map.set(c.name, count);
-  }
-  const counter: Record<string, number> = {};
-  for (const c of cases) {
-    const total = map.get(c.name) ?? 0;
-    if (total > 1) {
-      const idx = (counter[c.name] ?? 0) + 1;
-      counter[c.name] = idx;
-      c.alias = idx === 1 ? '(A)' : idx === 2 ? '(B)' : `(x${idx})`;
-    }
-  }
-}
+test.describe('E2E Auto Runner', () => {
+  test('execute suites/cases/steps from DB', async () => {
+    const config = loadConfig();
+    const suites = await readModelFromDb(config);
 
-test.describe('[Runner] Suites', () => {
-  test('Execute suites', async () => {
-    const suites = await loadSuiteModels(); // 返回 { name, cases: [{ id, name, ... }] }[]
-    for (const suite of suites) {
-      // 先为本套件内重复名称的用例分配别名
-      assignAliasesForDuplicates(suite.cases as any);
+    const ctx = new TestContext(config);
+    await ctx.bootstrapBrowser();
+    try {
+      await fixtures.beforeSuite(ctx);
 
-      for (const caseModel of suite.cases) {
-        // 关键：不依赖 caseModel.category，先尝试加载数据行
-        let rows: any[] = [];
-        try {
-          rows = (await loadCaseRows(caseModel)) ?? [];
-        } catch (e) {
-          // 加载失败时认为无数据行，走 KeywordDriven，但打印日志以便排查
-          console.warn(`WARN: loadCaseRows failed for case "${caseModel.name}":`, e);
-          rows = [];
+      for (const suite of suites) {
+        for (const tc of suite.cases) {
+          const caseTitle = `[${suite.name}] ${tc.name} (${tc.category})`;
+          await test.step(caseTitle, async () => {
+            const loops =
+              tc.category === CaseCategory.DataDriven
+                ? tc.dataSets
+                : tc.dataSets.length > 0
+                ? tc.dataSets
+                : [{ id: null, name: 'Default', ordinal: 1 }];
+
+            await fixtures.beforeCase(ctx, {
+              suite,
+              testCase: tc,
+              dataSet: null,
+              step: tc.steps[0] ?? { id: 0, ordinal: 0, name: 'Init', params: [] },
+              params: {},
+            });
+
+            for (const loop of loops) {
+              const loopTitle = `Loop#${loop.ordinal} - ${loop.name}`;
+              await test.step(loopTitle, async () => {
+                for (const step of tc.steps) {
+                  const unit: RunUnit = {
+                    suite,
+                    testCase: tc,
+                    dataSet: loop.id !== undefined ? loop : null,
+                    step,
+                    params: {},
+                  };
+
+                  // 从数据库解析参数
+                  unit.params = await resolveParamsForUnit(unit);
+
+                  await fixtures.beforeStep(ctx, unit);
+
+                  // 第 1 步：打开 Google 并模拟登录；其余步骤打印参数
+                  if (step.ordinal === 1) {
+                    await ctx.page.goto(config.appUrl);
+                    await ctx.page.waitForTimeout(300);
+                    console.log(`模拟登录用户：${config.login.username}`);
+                  } else {
+                    console.log(
+                      `[PRINT] Suite=${suite.name} Case=${tc.name} Loop#${loop.ordinal} Step=${step.ordinal}.${step.name} Params=`,
+                      unit.params,
+                    );
+                    await ctx.page.waitForTimeout(150);
+                  }
+
+                  await fixtures.afterStep(ctx, unit);
+                }
+              });
+            }
+
+            await fixtures.afterCase(ctx, {
+              suite,
+              testCase: tc,
+              dataSet: null,
+              step: tc.steps[tc.steps.length - 1] ?? {
+                id: 0,
+                ordinal: 0,
+                name: 'Done',
+                params: [],
+              },
+              params: {},
+            });
+          });
         }
-
-        const isDataDriven = rows.length > 0; // 以实际行数判断
-        const execMode = isDataDriven ? 'DataDriven' : 'KeywordDriven';
-
-        const displayName = caseModel.alias
-          ? `${caseModel.name} ${caseModel.alias}`
-          : caseModel.name;
-
-        await test.step(`Case: [${suite.name}] ${displayName} (${execMode})`, async () => {
-          if (isDataDriven) {
-            // 数据驱动执行：一次 case 下跑多条 row（Loop）
-            await runCaseDataDriven({ suite, caseModel, rows });
-          } else {
-            // 关键字驱动执行：按关键字序列执行一次
-            await runCaseKeywordDriven({ suite, caseModel });
-          }
-        });
       }
+
+      await fixtures.afterSuite(ctx);
+    } finally {
+      await ctx.teardownBrowser();
     }
   });
 });
