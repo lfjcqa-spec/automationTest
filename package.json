@@ -1,30 +1,26 @@
 {
-  "name": "playwright-step-framework",
-  "version": "1.1.1",
-  "private": true,
-  "type": "module",
+  "name": "playwright-test",
+  "version": "1.0.0",
+  "description": "Root project for managing Playwright E2E tests",
   "scripts": {
-    "pw:install": "playwright install",
-    "test": "playwright test",
-    "test:e2e-test": "dotenv -e e2e-test/conf/.env -- playwright test --config=e2e-test/playwright.config.ts",
-    "test:e2e-test:debug": "dotenv -e e2e-test/conf/.env -- playwright test --config=e2e-test/playwright.config.ts --debug",
-    "test:headed": "playwright test --headed",
-    "test:old": "playwright test --config=playwright.old.config.js",
-    "test:new": "playwright test --config=playwright.new.config.ts",
-    "report:old": "playwright show-report --config=playwright.old.config.js --port=9340",
-    "report:new": "playwright show-report --config=playwright.new.config.ts --port=9340",
-    "show-report:e2e-test": "playwright show-report e2e-test/playwright-report",
-    "lint": "echo \"add eslint if needed\""
+    "e2e": "cross-env NODE_CONFIG_DIR=./e2e-auto/conf playwright test --config=e2e-auto/playwright.config.ts",
+    "install-all": "npm install && cd e2e-auto && npm install",
+    "lint": "eslint .",
+    "build": "tsc -b e2e-auto"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.3.0",
-    "dotenv-cli": "^10.0.0",
-    "typescript": "^5.6.2"
+    "@playwright/test": "^1.46.1",
+    "@types/config": "^3.3.5",
+    "@types/mssql": "^9.1.7",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.4"
   },
+  "workspaces": [
+    "e2e-auto"
+  ],
   "dependencies": {
-    "lodash": "^4.17.21",
-    "mssql": "^11.0.1",
-    "zod": "^4.1.5"
+    "config": "^4.1.1",
+    "mssql": "^11.0.1"
   }
 }
