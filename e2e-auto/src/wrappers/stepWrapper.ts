@@ -1,38 +1,50 @@
-import { test, Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { resolveStep } from '../core/step-registry';
-
-// 定义 DB Step 类型
-export interface DbStep {
-  StepName: string;
-  [key: string]: any; // 支持动态字段
-}
+import { startStepResult, finishStepResult } from '../db/resultRepository';
+import { StepResult } from './types';
 
 export async function stepWrapper(
   page: Page,
-  step: DbStep,
-  options?: {
-    beforeStep?: (stepName: string, data: DbStep) => Promise<void> | void;
-    afterStep?: (stepName: string, data: DbStep, error?: Error) => Promise<void> | void;
-  },
+  step: any,
+  stepResults?: StepResult[],
+  executionNo?: number,
+  suiteName?: string,
+  caseName?: string,
 ) {
-  const stepName = step.StepName;
-  const fn = resolveStep(stepName);
-
-  return await test.step(`Step: ${stepName}`, async () => {
-    if (options?.beforeStep) {
-      await options.beforeStep(stepName, step);
-    }
-
-    let error: Error | undefined;
-    try {
-      await fn(page, step); // 执行真正的 step
-    } catch (err: any) {
-      error = err;
-      throw err;
-    } finally {
-      if (options?.afterStep) {
-        await options.afterStep(stepName, step, error);
-      }
-    }
+  // ---- Step 开始 ----
+  await startStepResult({
+    executionNo: executionNo!,
+    suiteName: suiteName!,
+    caseName: caseName!,
+    stepName: step.StepName,
   });
+
+  try {
+    const fn = resolveStep(step.StepName);
+    await fn(page, step);
+
+    stepResults?.push({ stepName: step.StepName, status: 'passed' });
+
+    // ---- Step 成功 ----
+    await finishStepResult({
+      executionNo: executionNo!,
+      suiteName: suiteName!,
+      caseName: caseName!,
+      stepName: step.StepName,
+      status: 'passed',
+    });
+  } catch (err: any) {
+    stepResults?.push({ stepName: step.StepName, status: 'failed', error: err.message });
+
+    // ---- Step 失败 ----
+    await finishStepResult({
+      executionNo: executionNo!,
+      suiteName: suiteName!,
+      caseName: caseName!,
+      stepName: step.StepName,
+      status: 'failed',
+      errorMessage: err.message,
+    });
+    throw err;
+  }
 }
