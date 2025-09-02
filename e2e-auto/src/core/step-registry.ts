@@ -29,8 +29,8 @@ const registry: Record<string, StepFn> = {
     console.log(`[searchProduct 模拟] prodCode=${data.prodCode}`);
   },
 
-  checkBalace: async (_page, data) => {
-    console.log(`[checkBalace 模拟] balance=${data.balance}`);
+  checkBalance: async (_page, data) => {
+    console.log(`[checkBalance 模拟] balance=${data.balance}`);
   },
 
   checkProductInfor: async (_page, data) => {
